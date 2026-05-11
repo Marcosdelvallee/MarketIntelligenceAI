@@ -8,149 +8,149 @@
 [![Supabase](https://img.shields.io/badge/Supabase-Database-green)](https://supabase.com)
 [![Resend](https://img.shields.io/badge/Resend-Email-red)](https://resend.com)
 
-**Sistema Automatizado de Inteligencia de Mercado Potenciado por IA**
+**AI-Powered Automated Market Intelligence System**
 
-[Documentación](https://github.com/tu-usuario/MarketIntelligenceAI-Project/docs) • [Demo](https://github.com/tu-usuario/MarketIntelligenceAI-Project) • [Reporte de Bug](https://github.com/tu-usuario/MarketIntelligenceAI-Project/issues) • [Contribuir](https://github.com/tu-usuario/MarketIntelligenceAI-Project/pulls)
+[Documentation](https://github.com/Marcosdelvallee/MarketIntelligenceAI-Project/docs) • [Demo](https://github.com/Marcosdelvallee/MarketIntelligenceAI-Project) • [Report Bug](https://github.com/Marcosdelvallee/MarketIntelligenceAI-Project/issues) • [Contribute](https://github.com/Marcosdelvallee/MarketIntelligenceAI-Project/pulls)
 
 </div>
 
 ---
 
-## 📊 Sobre el Proyecto
+## 📊 About the Project
 
-El **Market Intelligence AI System** es una plataforma empresarial de inteligencia competitiva que automatiza el monitoreo, análisis y reporte de datos de mercado en tiempo real utilizando inteligencia artificial generativa de última generación.
+The **Market Intelligence AI System** is an enterprise competitive intelligence platform that automates monitoring, analysis, and reporting of real-time market data using cutting-edge generative artificial intelligence.
 
-### 🎯 Problema que Soluciona
+### 🎯 Problem It Solves
 
-Las empresas pierden horas valiosas recopilando manualmente datos de competidores, analizando tendencias del mercado, y generando reportes estratégicos. Este proceso es:
-- ⏰ **Lento**: Requiere dedicación de personal especializado
-- 💰 **Costoso**: Salarios de analistas y herramientas premium
-- 📉 **Ineficiente**: Datos desactualizados y análisis subjetivos
-- 🔄 **No escalable**: Difícil de expandir a más competidores
+Companies waste valuable hours manually collecting competitor data, analyzing market trends, and generating strategic reports. This process is:
+- ⏰ **Slow**: Requires dedicated specialized staff
+- 💰 **Costly**: Analyst salaries and premium tools
+- 📉 **Inefficient**: Outdated data and subjective analysis
+- 🔄 **Not Scalable**: Difficult to expand to more competitors
 
-### 💡 Nuestra Solución
+### 💡 Our Solution
 
-Un sistema completamente automatizado que:
-- 🚀 **Monitorea 24/7**: Scraping continuo de múltiples fuentes
-- 🧠 **Analiza con IA**: Procesamiento inteligente con Llama 3.3-70B
-- 📈 **Detecta tendencias**: Identificación automática de patrones
-- ⚡ **Alerta en tiempo real**: Notificaciones instantáneas de cambios críticos
-- 📊 **Genera reportes**: Análisis estratégicos automáticos
-- 💰 **Ahorra costos**: Reducción del 90% en tiempo de análisis
-
----
-
-## 🚀 Características Principales
-
-### 🔍 Web Scraping Inteligente
-- **Multi-fuente**: Extracción simultánea de múltiples competidores
-- **Robusto**: Manejo automático de errores y reintentos
-- **Programable**: Configuración flexible de frecuencias
-- **Escalable**: Fácil adición de nuevas fuentes de datos
-
-### 🧠 Análisis con IA de Vanguardia
-- **Modelo Llama 3.3-70B**: Procesamiento de lenguaje natural de última generación
-- **Análisis profundo**: Detección de tendencias, oportunidades y amenazas
-- **Insights accionables**: Recomendaciones estratégicas específicas
-- **Aprendizaje continuo**: Mejora constante con cada análisis
-
-### 📊 Detección de Tendencias
-- **Patrones de mercado**: Identificación de cambios en precios, productos y estrategias
-- **Análisis comparativo**: Benchmarking automático entre competidores
-- **Predicción inteligente**: Anticipación de movimientos del mercado
-- **Visualización de datos**: Representación clara de métricas clave
-
-### 🚨 Sistema de Alertas Inteligentes
-- **Priorización automática**: Clasificación por nivel de urgencia (low, medium, high, critical)
-- **Multi-canal**: Email con HTML profesional y notificaciones Slack
-- **Personalización**: Configuración de reglas y umbrales
-- **Historial completo**: Registro de todas las alertas generadas
-
-### 💾 Base de Datos en Tiempo Real
-- **Supabase PostgreSQL**: Infraestructura robusta y escalable
-- **Historial completo**: Tracking de todos los cambios y análisis
-- **Consultas optimizadas**: Acceso rápido a datos históricos
-- **Backup automático**: Protección de datos garantizada
-
-### 📈 Comparación de Precios
-- **Monitoreo continuo**: Detección de cambios de precios instantánea
-- **Análisis histórico**: Tendencias de precios a lo largo del tiempo
-- **Alertas de precios**: Notificaciones de cambios significativos
-- **Competitive intelligence**: Inteligencia de precios competitiva
+A fully automated system that:
+- 🚀 **Monitors 24/7**: Continuous scraping from multiple sources
+- 🧠 **Analyzes with AI**: Intelligent processing with Llama 3.3-70B
+- 📈 **Detects Trends**: Automatic pattern identification
+- ⚡ **Real-Time Alerts**: Instant notifications of critical changes
+- 📊 **Generates Reports**: Automatic strategic analysis
+- 💰 **Saves Costs**: 90% reduction in analysis time
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🚀 Key Features
 
-### Orquestación & Automatización
-- **n8n**: Plataforma de workflow automation de código abierto
-- **JavaScript**: Procesamiento y transformación de datos
-- **HTTP Requests**: Integración con APIs externas
+### 🔍 Intelligent Web Scraping
+- **Multi-Source**: Simultaneous extraction from multiple competitors
+- **Robust**: Automatic error handling and retries
+- **Schedulable**: Flexible frequency configuration
+- **Scalable**: Easy addition of new data sources
 
-### Inteligencia Artificial
-- **Groq API**: Inferencia de IA de alta velocidad
-- **Llama 3.3-70B-versatile**: Modelo de lenguaje de última generación
-- **NLP Procesamiento**: Análisis de texto y extracción de insights
+### 🧠 Cutting-Edge AI Analysis
+- **Llama 3.3-70B Model**: State-of-the-art natural language processing
+- **Deep Analysis**: Detection of trends, opportunities, and threats
+- **Actionable Insights**: Specific strategic recommendations
+- **Continuous Learning**: Constant improvement with each analysis
 
-### Base de Datos & Almacenamiento
-- **Supabase**: Plataforma de base de datos como servicio
-- **PostgreSQL**: Motor de base de datos relacional
-- **REST API**: Operaciones CRUD optimizadas
+### 📊 Trend Detection
+- **Market Patterns**: Identification of changes in prices, products, and strategies
+- **Comparative Analysis**: Automatic benchmarking between competitors
+- **Intelligent Prediction**: Anticipation of market movements
+- **Data Visualization**: Clear representation of key metrics
 
-### Notificaciones & Comunicación
-- **Resend**: Servicio de email transaccional
-- **Slack Webhook**: Integración con Slack para alertas críticas
-- **HTML Email**: Diseño profesional de correos electrónicos
+### 🚨 Intelligent Alert System
+- **Automatic Prioritization**: Classification by urgency level (low, medium, high, critical)
+- **Multi-Channel**: Professional HTML email and Slack notifications
+- **Customization**: Configuration of rules and thresholds
+- **Complete History**: Record of all generated alerts
 
-### Infraestructura
-- **Node.js 18+**: Runtime de JavaScript
-- **Environment Variables**: Gestión segura de credenciales
-- **Git**: Control de versiones
+### 💾 Real-Time Database
+- **Supabase PostgreSQL**: Robust and scalable infrastructure
+- **Complete History**: Tracking of all changes and analysis
+- **Optimized Queries**: Fast access to historical data
+- **Automatic Backup**: Guaranteed data protection
+
+### 📈 Price Comparison
+- **Continuous Monitoring**: Instant price change detection
+- **Historical Analysis**: Price trends over time
+- **Price Alerts**: Notifications of significant changes
+- **Competitive Intelligence**: Competitive price intelligence
 
 ---
 
-## 📋 Requisitos Previos
+## 🛠️ Technology Stack
 
-### Software Necesario
-- **Node.js 18+**: [Descargar aquí](https://nodejs.org/)
-- **npm o yarn**: Gestor de paquetes de JavaScript
-- **Git**: [Descargar aquí](https://git-scm.com/)
-- **Editor de código**: VS Code [recomendado](https://code.visualstudio.com/)
+### Orchestration & Automation
+- **n8n**: Open-source workflow automation platform
+- **JavaScript**: Data processing and transformation
+- **HTTP Requests**: External API integration
 
-### Cuentas Externas (Todas con Planes Gratuitos)
-- **Supabase**: [Crear cuenta gratuita](https://supabase.com/)
-- **Groq**: [Crear cuenta gratuita](https://groq.com/)
-- **Resend**: [Crear cuenta gratuita](https://resend.com/)
-- **Slack**: [Opcional - Crear workspace](https://slack.com/)
+### Artificial Intelligence
+- **Groq API**: High-speed AI inference
+- **Llama 3.3-70B-versatile**: State-of-the-art language model
+- **NLP Processing**: Text analysis and insight extraction
 
-### Hardware Recomendado
+### Database & Storage
+- **Supabase**: Database as a service platform
+- **PostgreSQL**: Relational database engine
+- **REST API**: Optimized CRUD operations
+
+### Notifications & Communication
+- **Resend**: Transactional email service
+- **Slack Webhook**: Slack integration for critical alerts
+- **HTML Email**: Professional email design
+
+### Infrastructure
+- **Node.js 18+**: JavaScript runtime
+- **Environment Variables**: Secure credential management
+- **Git**: Version control
+
+---
+
+## 📋 Prerequisites
+
+### Required Software
+- **Node.js 18+**: [Download here](https://nodejs.org/)
+- **npm or yarn**: JavaScript package manager
+- **Git**: [Download here](https://git-scm.com/)
+- **Code Editor**: VS Code [recommended](https://code.visualstudio.com/)
+
+### External Accounts (All with Free Plans)
+- **Supabase**: [Create free account](https://supabase.com/)
+- **Groq**: [Create free account](https://groq.com/)
+- **Resend**: [Create free account](https://resend.com/)
+- **Slack**: [Optional - Create workspace](https://slack.com/)
+
+### Recommended Hardware
 - **CPU**: 2+ cores
-- **RAM**: 4GB+ (8GB recomendado)
-- **Almacenamiento**: 10GB+ libres
-- **Internet**: Conexión estable
+- **RAM**: 4GB+ (8GB recommended)
+- **Storage**: 10GB+ free
+- **Internet**: Stable connection
 
 ---
 
-## 🚀 Instalación Rápida
+## 🚀 Quick Installation
 
-### 1. Clonar el Repositorio
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/tu-usuario/MarketIntelligenceAI-Project.git
+git clone https://github.com/Marcosdelvallee/MarketIntelligenceAI-Project.git
 cd MarketIntelligenceAI-Project
 ```
 
-### 2. Configurar Variables de Entorno
+### 2. Configure Environment Variables
 
 ```bash
 cp config/.env.example config/.env
 ```
 
-Edita `config/.env` con tus credenciales:
+Edit `config/.env` with your credentials:
 
 ```env
 # Supabase Configuration
-SUPABASE_URL=https://tu-proyecto.supabase.co
+SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_KEY=your-anon-key-here
 
 # Groq AI Configuration  
@@ -172,502 +172,316 @@ N8N_PROTOCOL=http
 N8N_HOST=localhost
 ```
 
-### 3. Ejecutar Script de Setup
+### 3. Run Setup Script
 
 ```bash
 bash scripts/setup.sh
 ```
 
-Este script:
-- ✅ Verifica dependencias instaladas
-- ✅ Crea directorios necesarios
-- ✅ Valida configuración
-- ✅ Prepara el entorno
+This script:
+- ✅ Verifies installed dependencies
+- ✅ Creates necessary directories
+- ✅ Validates configuration
+- ✅ Prepares the environment
 
-### 4. Iniciar n8n
+### 4. Start n8n
 
 ```bash
 bash scripts/start.sh
 ```
 
-n8n estará disponible en: **http://localhost:5678**
+n8n will be available at: **http://localhost:5678**
 
-### 5. Importar el Workflow
+### 5. Import the Workflow
 
-1. Abre n8n en tu navegador
-2. Haz clic en **"Import from File"**
-3. Selecciona `workflows/market_intelligence_complete.json`
-4. Configura las credenciales en cada nodo
-5. Guarda el workflow
+1. Open n8n in your browser
+2. Click on **"Import from File"**
+3. Select `workflows/market_intelligence_complete.json`
+4. Configure credentials in each node
+5. Save the workflow
 
-### 6. Ejecutar el Sistema
+### 6. Run the System
 
-Haz clic en **"Execute Workflow"** y observa cómo el sistema:
-- 🕷️ Scrapea datos de competidores
-- 💾 Almacena en la base de datos
-- 🧠 Analiza con IA
-- 📊 Genera insights
-- 📧 Envía alertas por email
-- 💬 Notifica en Slack (si está configurado)
+Click **"Execute Workflow"** and watch as the system:
+- 🕷️ Scrapes competitor data
+- 💾 Stores in the database
+- 🧠 Analyzes with AI
+- 📊 Generates insights
+- 📧 Sends email alerts
+- 💬 Notifies on Slack (if configured)
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 MarketIntelligenceAI-Project/
-├── README.md                          # Documentación principal
-├── LICENSE                            # Licencia MIT
-├── docs/                              # Documentación técnica
-│   ├── architecture.md                # Arquitectura del sistema
-│   └── setup-guide.md                 # Guía de configuración detallada
-├── workflows/                         # Workflows de n8n
+├── README.md                          # Main documentation
+├── LICENSE                            # MIT License
+├── docs/                              # Technical documentation
+│   ├── architecture.md                # System architecture
+│   └── setup-guide.md                 # Detailed configuration guide
+├── workflows/                         # n8n workflows
 │   └── market_intelligence_complete.json
-├── config/                            # Configuraciones
-│   └── .env.example                  # Plantilla de variables de entorno
-├── scripts/                           # Scripts de automatización
-│   ├── setup.sh                       # Script de configuración inicial
-│   └── start.sh                       # Script para iniciar n8n
-├── screenshots/                       # Capturas de pantalla
-│   ├── dashboard.png                  # Dashboard del sistema
-│   ├── workflow.png                   # Workflow en n8n
-│   └── email-example.png              # Ejemplo de email de alerta
-└── logs/                              # Logs del sistema (creado automáticamente)
-    ├── n8n.log                        # Logs de n8n
-    └── setup.log                      # Logs de configuración
+├── config/                            # Configurations
+│   └── .env.example                  # Environment variables template
+├── scripts/                           # Automation scripts
+│   ├── setup.sh                       # Initial setup script
+│   └── start.sh                       # Script to start n8n
+├── screenshots/                       # Screenshots
+│   ├── dashboard.png                  # System dashboard
+│   ├── workflow.png                   # Workflow in n8n
+│   └── email-example.png              # Alert email example
+└── logs/                              # System logs (created automatically)
+    ├── n8n.log                        # n8n logs
+    └── setup.log                      # Setup logs
 ```
 
 ---
 
-## 🎯 Casos de Uso
+## 🎯 Use Cases
 
-### 🏢 Para Empresas
+### 🏢 For Companies
 
-**Monitoreo Competitivo**
-- Rastreo de precios y productos de competidores
-- Análisis de estrategias de mercado
-- Detección de nuevos lanzamientos
+**Competitive Monitoring**
+- Tracking competitor prices and products
+- Analysis of market strategies
+- Detection of new launches
 
-**Inteligencia de Precios**
-- Monitoreo continuo de precios
-- Análisis de tendencias de precios
-- Alertas de cambios significativos
+**Price Intelligence**
+- Continuous price monitoring
+- Price trend analysis
+- Significant change alerts
 
-**Análisis de Mercado**
-- Identificación de tendencias emergentes
-- Detección de oportunidades de mercado
-- Evaluación de amenazas competitivas
+**Market Analysis**
+- Identification of emerging trends
+- Detection of market opportunities
+- Competitive position evaluation
 
-### 📊 Para Analistas
+### 🏪 For E-commerce
 
-**Automatización de Reportes**
-- Generación automática de reportes diarios/semanales
-- Análisis de datos históricos
-- Visualización de métricas clave
+**Product Catalog**
+- Automated competitor product tracking
+- Price comparison
+- Availability monitoring
 
-**Investigación de Mercado**
-- Recopilación automatizada de datos
-- Análisis de patrones y tendencias
-- Generación de insights accionables
+**Dynamic Pricing**
+- Real-time price adjustments
+- Competitive strategy optimization
+- Margin maximization
 
-### 🚀 Para Startups
+### 📈 For Investors
 
-**Inteligencia Competitiva**
-- Monitoreo de competidores establecidos
-- Análisis de estrategias de mercado
-- Identificación de oportunidades
+**Market Analysis**
+- Sector trend monitoring
+- Competitive analysis
+- Investment opportunities
 
-**Toma de Decisiones**
-- Datos en tiempo real para decisiones estratégicas
-- Alertas de cambios importantes
-- Recomendaciones basadas en IA
-
----
-
-## 📊 Métricas y Resultados
-
-### Impacto en el Negocio
-
-| Métrica | Antes | Después | Mejora |
-|---------|-------|---------|--------|
-| **Tiempo de Análisis** | 8-12 horas | 5-10 minutos | **98% más rápido** |
-| **Costo Mensual** | $2,000-$5,000 | $50-$100 | **95% más económico** |
-| **Frecuencia de Datos** | Semanal | Continua (24/7) | **Infinitamente mejor** |
-| **Precisión de Datos** | 70-80% | 95%+ | **20% más preciso** |
-| **Cobertura de Competidores** | 3-5 | Ilimitada | **Escalable** |
-
-### KPIs Monitoreados
-
-- 📦 **Productos rastreados**: Número total de productos monitoreados
-- 💰 **Cambios de precio**: Variaciones de precio detectadas
-- 📈 **Tendencias identificadas**: Patrones del mercado descubiertos
-- 💡 **Oportunidades**: Mejoras estratégicas detectadas
-- ⚠️ **Amenazas**: Riesgos competitivos identificados
-- 🚨 **Alertas generadas**: Notificaciones enviadas
-- 📊 **Reportes creados**: Análisis generados automáticamente
+**Risk Assessment**
+- Early detection of market changes
+- Competitor threat analysis
+- Data-driven decision making
 
 ---
 
-## 🔧 Configuración Avanzada
+## 🔧 Configuration
 
-### Base de Datos (Supabase)
+### Database Schema
 
-#### Crear Tablas Necesarias
+The system automatically creates the following tables in Supabase:
 
+#### `competitor_products`
+Stores scraped competitor data:
 ```sql
--- Tabla de productos de competidores
 CREATE TABLE competitor_products (
-  id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL,
-  price DECIMAL(10,2) NOT NULL,
-  category TEXT,
-  competitor_id TEXT NOT NULL,
+  id BIGSERIAL PRIMARY KEY,
+  competitor TEXT NOT NULL,
+  product_name TEXT NOT NULL,
+  price NUMERIC(10,2),
   url TEXT,
-  scraped_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  INDEX idx_competitor_id (competitor_id),
-  INDEX idx_scraped_at (scraped_at)
+  description TEXT,
+  scraped_at TIMESTAMPTZ DEFAULT NOW()
 );
-
--- Tabla de alertas
-CREATE TABLE alerts (
-  id SERIAL PRIMARY KEY,
-  priority TEXT NOT NULL CHECK (priority IN ('low', 'medium', 'high', 'critical')),
-  message TEXT NOT NULL,
-  analysis_date TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  INDEX idx_priority (priority),
-  INDEX idx_analysis_date (analysis_date)
-);
-
--- Tabla de reportes diarios
-CREATE TABLE daily_reports (
-  id SERIAL PRIMARY KEY,
-  summary TEXT,
-  trends JSONB,
-  opportunities JSONB,
-  threats JSONB,
-  recommendations JSONB,
-  price_changes JSONB,
-  alerts JSONB,
-  report_date TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  INDEX idx_report_date (report_date)
-);
-
--- Crear índices para optimización
-CREATE INDEX idx_products_competitor_date ON competitor_products(competitor_id, scraped_at);
-CREATE INDEX idx_alerts_priority_date ON alerts(priority, analysis_date);
 ```
 
-#### Configurar Row Level Security (RLS)
-
+#### `alerts`
+Stores generated alerts:
 ```sql
--- Habilitar RLS
-ALTER TABLE competitor_products ENABLE ROW LEVEL SECURITY;
-ALTER TABLE alerts ENABLE ROW LEVEL SECURITY;
-ALTER TABLE daily_reports ENABLE ROW LEVEL SECURITY;
-
--- Política de lectura para todos
-CREATE POLICY "Public read access" ON competitor_products
-  FOR SELECT USING (true);
-
-CREATE POLICY "Public read access" ON alerts
-  FOR SELECT USING (true);
-
-CREATE POLICY "Public read access" ON daily_reports
-  FOR SELECT USING (true);
-
--- Política de inserción para el sistema
-CREATE POLICY "System insert access" ON competitor_products
-  FOR INSERT WITH CHECK (true);
-
-CREATE POLICY "System insert access" ON alerts
-  FOR INSERT WITH CHECK (true);
-
-CREATE POLICY "System insert access" ON daily_reports
-  FOR INSERT WITH CHECK (true);
+CREATE TABLE alerts (
+  id BIGSERIAL PRIMARY KEY,
+  alert_type TEXT NOT NULL,
+  priority TEXT NOT NULL,
+  message TEXT NOT NULL,
+  competitor TEXT,
+  analysis_date TIMESTAMPTZ DEFAULT NOW()
+);
 ```
 
-### Configuración de Email (Resend)
-
-#### 1. Verificar Dominio
-
-```bash
-# Opción A: Usar dominio propio
-1. Ve a https://resend.com/domains
-2. Agrega tu dominio (ej: tuempresa.com)
-3. Configura registros DNS:
-   - TXT: resend._domainkey.tuempresa.com
-   - CNAME: resend._domainkey.tuempresa.com
-4. Espera verificación (5-10 minutos)
-
-# Opción B: Usar dominio de Resend (más rápido)
-1. Usa onboarding@resend.dev como remitente
-2. Sin configuración DNS necesaria
+#### `daily_reports`
+Stores daily analysis reports:
+```sql
+CREATE TABLE daily_reports (
+  id BIGSERIAL PRIMARY KEY,
+  report_date TIMESTAMPTZ DEFAULT NOW(),
+  analysis TEXT NOT NULL,
+  trends TEXT,
+  recommendations TEXT
+);
 ```
 
-#### 2. Obtener API Key
+### Customizing Competitors
 
-```bash
-1. Ve a https://resend.com/api-keys
-2. Crea nueva API Key
-3. Copia la key (formato: re_xxxxxxxxxxxxxx)
-4. Agrégala a config/.env
-```
+Edit the n8n workflow to add or remove competitors:
 
-#### 3. Configurar Nodo en n8n
+1. Open the workflow in n8n
+2. Locate the **"Set Competitors"** node
+3. Add or modify URLs:
 
 ```javascript
-// En el nodo "Send Email Alert":
-{
-  "from": "onboarding@resend.dev", // o tu email verificado
-  "to": ["tu-email@empresa.com"],
-  "subject": "🚨 Market Intelligence Alert - {{ $json.priority }} Priority",
-  "html": "{{ $json.message }}"
-}
+return [
+  { url: "https://competitor1.com/products" },
+  { url: "https://competitor2.com/products" },
+  { url: "https://competitor3.com/products" }
+];
 ```
 
-### Configuración de Slack
+### Alert Thresholds
 
-#### 1. Crear Webhook
-
-```bash
-1. Ve a https://api.slack.com/apps
-2. Crea nueva app: "Market Intelligence Bot"
-3. Activa "Incoming Webhooks"
-4. Crea nuevo webhook en tu canal
-5. Copia la URL (formato: https://hooks.slack.com/services/...)
-6. Agrégala a config/.env
-```
-
-#### 2. Configurar Nodo en n8n
+Configure alert priorities in the **"Analyze with AI"** node:
 
 ```javascript
-// En el nodo "Send Slack Alert":
-{
-  "text": "🚨 CRITICAL ALERT: {{ $json.message }}",
-  "channel": "#market-intelligence",
-  "username": "Market Intelligence Bot",
-  "icon_emoji": ":robot_face:"
-}
-```
-
-### Configuración de Automatización
-
-#### Trigger Programado en n8n
-
-```javascript
-// Opciones de frecuencia:
-
-// Diariamente a las 9:00 AM
-"0 9 * * *"
-
-// Semanalmente los lunes a las 9:00 AM  
-"0 9 * * 1"
-
-// Cada 6 horas
-"0 */6 * * *"
-
-// Cada hora
-"0 * * * *"
-
-// Personalizado (cada 2 horas)
-"0 */2 * * *"
+const thresholds = {
+  critical: 50,  // Price change > 50%
+  high: 30,      // Price change > 30%
+  medium: 15,    // Price change > 15%
+  low: 5         // Price change > 5%
+};
 ```
 
 ---
 
-## 📖 Guía de Uso
+## 📊 Usage Examples
 
-### Ejecución Manual
+### Manual Execution
 
-1. **Abrir el Workflow**
-   - Navega a la sección de Workflows en n8n
-   - Selecciona "Market Intelligence - Complete Workflow"
+1. Open n8n: `http://localhost:5678`
+2. Open the Market Intelligence workflow
+3. Click **"Execute Workflow"**
+4. Watch the execution in real-time
 
-2. **Revisar Configuración**
-   - Verifica que todas las credenciales estén configuradas
-   - Confirma que los nodos estén conectados correctamente
+### Scheduled Execution
 
-3. **Ejecutar**
-   - Haz clic en "Execute Workflow"
-   - Observa la ejecución en tiempo real
-   - Revisa los resultados de cada nodo
+Configure automatic execution:
 
-4. **Verificar Resultados**
-   - Revisa la tabla `competitor_products` en Supabase
-   - Verifica la tabla `alerts` en Supabase
-   - Confirma que recibiste el email
-   - Revisa Slack (si está configurado)
+1. Click on the **Cron** node
+2. Set the frequency:
+   - Every hour: `0 * * * *`
+   - Every 6 hours: `0 */6 * * *`
+   - Daily at 9 AM: `0 9 * * *`
+   - Every Monday at 8 AM: `0 8 * * 1`
 
-### Ejecución Programada
+### API Integration
 
-1. **Agregar Trigger**
-   - Agrega nodo "Schedule Trigger" al inicio
-   - Configura la frecuencia deseada
-   - Conecta al primer nodo del workflow
+Use n8n webhooks to trigger execution externally:
 
-2. **Activar Workflow**
-   - Haz clic en "Activate" en n8n
-   - El workflow se ejecutará automáticamente según el schedule
-
-3. **Monitorear**
-   - Revisa los logs en n8n
-   - Verifica las tablas en Supabase
-   - Confirma recepción de alertas
-
-### Personalización
-
-#### Agregar Nuevos Competidores
-
-```javascript
-// 1. Agregar nuevo nodo "HTTP Request"
-// 2. Configurar URL del competidor
-// 3. Agregar al nodo "Data Processing"
-// 4. Actualizar lógica de detección de competitor_id
-```
-
-#### Modificar Reglas de Alerta
-
-```javascript
-// En el nodo "Alert Logic":
-if (analysisData.trends && analysisData.trends.length > 3) {
-  priority = 'critical';
-} else if (analysisData.threats && analysisData.threats.length > 0) {
-  priority = 'high';
-} else if (analysisData.opportunities && analysisData.opportunities.length > 2) {
-  priority = 'medium';
-} else {
-  priority = 'low';
-}
-```
-
-#### Personalizar Email Template
-
-```javascript
-// Modificar el HTML en el nodo "Alert Logic"
-// Puedes agregar:
-- Logo de tu empresa
-- Colores corporativos
-- Enlaces a dashboards
-- Tablas de datos
-- Gráficos
+```bash
+curl -X POST http://localhost:5678/webhook/market-intelligence \
+  -H "Content-Type: application/json" \
+  -d '{"competitor": "example.com"}'
 ```
 
 ---
 
-## 🐛 Solución de Problemas
+## 🐛 Troubleshooting
 
-### Problemas Comunes
+### Common Issues
 
-#### ❌ Error: "Authorization failed"
+#### n8n Doesn't Start
 
-**Causa**: API keys incorrectas o expiradas
-
-**Solución**:
+**Problem**: Port 5678 already in use
 ```bash
-1. Verifica que las API keys sean correctas
-2. Revisa que las keys tengan los permisos necesarios
-3. Confirma que las keys no hayan expirado
-4. Regenera las keys si es necesario
+# Find process using the port
+lsof -i :5678
+
+# Kill the process
+kill -9 <PID>
+
+# Or change port in .env
+N8N_PORT=5679
 ```
 
-#### ❌ Error: "Bad request"
+#### Scraping Errors
 
-**Causa**: Parámetros incorrectos en los nodos
+**Problem**: Blocked by website
+- Use proxies or VPNs
+- Add delays between requests
+- Implement user-agent rotation
+- Use headless browsers (Puppeteer/Playwright)
 
-**Solución**:
+#### Groq API Errors
+
+**Problem**: Rate limit exceeded
+- Check your quota: https://console.groq.com
+- Implement exponential backoff
+- Reduce analysis frequency
+- Consider caching results
+
+#### Email Not Sending
+
+**Problem**: Invalid Resend credentials
 ```bash
-1. Verifica los parámetros de los nodos HTTP Request
-2. Revisa la sintaxis de las expresiones
-3. Confirma que los datos estén en el formato correcto
-4. Revisa la documentación de la API
+# Test Resend API
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+     -H "Content-Type: application/json" \
+     -d '{"from":"onboarding@resend.dev","to":["test@example.com"],"subject":"Test","html":"<p>Test</p>"}' \
+     https://api.resend.com/emails
 ```
 
-#### ❌ Error: "Connection refused"
+### Logs and Debugging
 
-**Causa**: n8n no está corriendo o puerto incorrecto
-
-**Solución**:
-```bash
-1. Verifica que n8n esté corriendo: ps aux | grep n8n
-2. Revisa el puerto configurado (default: 5678)
-3. Confirma que no haya otro servicio usando el puerto
-4. Reinicia n8n si es necesario
-```
-
-#### ❌ Email no llega
-
-**Causa**: Configuración de Resend incorrecta
-
-**Solución**:
-```bash
-1. Verifica la configuración de Resend
-2. Revisa que el dominio esté verificado
-3. Confirma que la API key sea correcta
-4. Revisa la carpeta de spam
-5. Verifica logs de Resend
-```
-
-#### ❌ Slack no envía alertas
-
-**Causa**: Webhook URL incorrecta o prioridad no crítica
-
-**Solución**:
-```bash
-1. Verifica la URL del webhook
-2. Revisa que el nodo esté conectado correctamente
-3. Confirma que la prioridad sea "critical"
-4. Verifica que el webhook esté activo en Slack
-5. Revisa los logs de Slack
-```
-
-### Debugging
-
-#### Ver Logs de n8n
+#### View n8n Logs
 
 ```bash
-# Ver logs en tiempo real
+# Follow logs in real-time
 tail -f logs/n8n.log
 
-# Buscar errores específicos
-grep "ERROR" logs/n8n.log
-
-# Ver últimas 50 líneas
-tail -n 50 logs/n8n.log
+# Search for errors
+grep -i "error" logs/n8n.log
 ```
 
-#### Ver Datos en Supabase
+#### Query Database
 
 ```sql
--- Ver últimos productos
+-- View recent products
 SELECT * FROM competitor_products 
 ORDER BY scraped_at DESC 
 LIMIT 10;
 
--- Ver alertas recientes
+-- View recent alerts
 SELECT * FROM alerts 
 ORDER BY analysis_date DESC 
 LIMIT 10;
 
--- Ver reportes del día
+-- View today's reports
 SELECT * FROM daily_reports 
 WHERE DATE(report_date) = CURRENT_DATE;
 ```
 
-#### Testear Conexiones
+#### Test Connections
 
 ```bash
-# Testear conexión a Supabase
+# Test Supabase connection
 curl -H "apikey: YOUR_SUPABASE_KEY" \
      -H "Authorization: Bearer YOUR_SUPABASE_KEY" \
      YOUR_SUPABASE_URL/rest/v1/competitor_products?limit=1
 
-# Testear conexión a Groq
+# Test Groq connection
 curl -H "Authorization: Bearer YOUR_GROQ_API_KEY" \
      -H "Content-Type: application/json" \
      -d '{"model":"llama-3.3-70b-versatile","messages":[{"role":"user","content":"test"}],"max_tokens":10}' \
      https://api.groq.com/openai/v1/chat/completions
 
-# Testear conexión a Resend
+# Test Resend connection
 curl -H "Authorization: Bearer YOUR_RESEND_API_KEY" \
      -H "Content-Type: application/json" \
      -d '{"from":"onboarding@resend.dev","to":["test@example.com"],"subject":"Test","html":"<p>Test</p>"}' \
@@ -678,266 +492,221 @@ curl -H "Authorization: Bearer YOUR_RESEND_API_KEY" \
 
 ## 📈 Roadmap
 
-### 🎯 Versión 1.0 (Actual)
-- ✅ Web scraping de múltiples competidores
-- ✅ Análisis con IA (Llama 3.3-70B)
-- ✅ Sistema de alertas inteligentes
-- ✅ Notificaciones por email y Slack
-- ✅ Base de datos en tiempo real
-- ✅ Comparación de precios
+### 🎯 Version 1.0 (Current)
+- ✅ Multi-competitor web scraping
+- ✅ AI analysis (Llama 3.3-70B)
+- ✅ Intelligent alert system
+- ✅ Email and Slack notifications
+- ✅ Real-time database
+- ✅ Price comparison
 
-### 🚀 Versión 2.0 (Próximo Trimestre)
-- [ ] **Dashboard Web Interactivo**
-  - Visualización de datos en tiempo real
-  - Gráficos y métricas interactivas
-  - Filtros y búsqueda avanzada
+### 🚀 Version 2.0 (Next Quarter)
+- [ ] **Interactive Web Dashboard**
+  - Real-time data visualization
+  - Interactive graphs and metrics
+  - Advanced filters and search
 
-- [ ] **Análisis Predictivo**
-  - Modelos de machine learning
-  - Predicción de tendencias futuras
-  - Recomendaciones proactivas
+- [ ] **Predictive Analytics**
+  - Machine learning models
+  - Future trend prediction
+  - Proactive recommendations
 
-- [ ] **API REST**
-  - Endpoints para integraciones externas
-  - Documentación completa con Swagger
-  - Autenticación y autorización
+- [ ] **REST API**
+  - Endpoints for external integrations
+  - Complete Swagger documentation
+  - Authentication and authorization
 
-### 🌟 Versión 3.0 (Próximo Semestre)
-- [ ] **Integración con Más Fuentes**
-  - Redes sociales (Twitter, LinkedIn)
+### 🌟 Version 3.0 (Next Semester)
+- [ ] **Integration with More Sources**
+  - Social media (Twitter, LinkedIn)
   - Marketplaces (Amazon, eBay)
-  - Noticias y blogs del sector
+  - Industry news and blogs
 
-- [ ] **Análisis de Sentimiento**
-  - Análisis de opiniones de clientes
-  - Detección de cambios en percepción
-  - Alertas de reputación
+- [ ] **Sentiment Analysis**
+  - Customer opinion analysis
+  - Perception change detection
+  - Reputation alerts
 
 - [ ] **Mobile App**
-  - Aplicación iOS y Android
-  - Notificaciones push
-  - Dashboard móvil
+  - iOS and Android application
+  - Push notifications
+  - Mobile dashboard
 
-### 💎 Versión 4.0 (Futuro)
-- [ ] **Integración con CRM**
+### 💎 Version 4.0 (Future)
+- [ ] **CRM Integration**
   - Salesforce, HubSpot, Pipedrive
-  - Sincronización automática de leads
-  - Enriquecimiento de datos de clientes
+  - Automatic lead synchronization
+  - Customer data enrichment
 
-- [ ] **Inteligencia Artificial Avanzada**
-  - Modelos personalizados por industria
-  - Análisis de imágenes y videos
-  - Procesamiento de audio
+- [ ] **Advanced Artificial Intelligence**
+  - Industry-specific custom models
+  - Image and video analysis
+  - Audio processing
 
 - [ ] **Enterprise Features**
   - Multi-tenant architecture
-  - RBAC avanzado
-  - SSO y auditoría
-  - Compliance y seguridad
+  - Advanced RBAC
+  - SSO and auditing
+  - Compliance and security
 
 ---
 
-## 🤝 Contribuciones
+## 🤝 Contributing
 
-¡Las contribuciones son bienvenidas! Este es un proyecto open source y valoramos cada contribución.
+Contributions are welcome! This is an open-source project and we value every contribution.
 
-### Cómo Contribuir
+### How to Contribute
 
-1. **Fork el Proyecto**
+1. **Fork the Project**
    ```bash
-   git clone https://github.com/tu-usuario/MarketIntelligenceAI-Project.git
+   git clone https://github.com/Marcosdelvallee/MarketIntelligenceAI-Project.git
    ```
 
-2. **Crea una Rama para tu Feature**
+2. **Create a Feature Branch**
    ```bash
    git checkout -b feature/AmazingFeature
    ```
 
-3. **Commit tus Cambios**
+3. **Commit Your Changes**
    ```bash
    git commit -m 'Add some AmazingFeature'
    ```
 
-4. **Push a la Rama**
+4. **Push to the Branch**
    ```bash
    git push origin feature/AmazingFeature
    ```
 
-5. **Abre un Pull Request**
-   - Describe tu cambio en detalle
-   - Incluye capturas de pantalla si aplica
-   - Menciona los issues relacionados
+5. **Open a Pull Request**
+   - Describe your change in detail
+   - Include screenshots if applicable
+   - Mention related issues
 
-### Áreas de Contribución
+### Contribution Areas
 
-- 🐛 **Bug Fixes**: Corrección de errores
-- ✨ **New Features**: Nuevas funcionalidades
-- 📚 **Documentation**: Mejora de documentación
-- 🎨 **UI/UX**: Mejoras en interfaz
-- ⚡ **Performance**: Optimizaciones
-- 🧪 **Testing**: Tests y validaciones
-- 🌍 **Translations**: Traducciones a otros idiomas
+- 🐛 **Bug Fixes**: Error corrections
+- ✨ **New Features**: New functionalities
+- 📚 **Documentation**: Documentation improvements
+- 🎨 **UI/UX**: Interface improvements
+- ⚡ **Performance**: Optimizations
+- 🧪 **Testing**: Tests and validations
+- 🌍 **Translations**: Translations to other languages
 
-### Código de Conducta
+### Code of Conduct
 
-- Respeto y consideración para todos
-- Comunicación abierta y constructiva
-- Foco en lo que es mejor para la comunidad
-- Empatía y colaboración
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la **Licencia MIT** - ver el archivo [LICENSE](LICENSE) para detalles.
-
-### Resumen de la Licencia
-
-✅ **Permitido**:
-- Uso comercial
-- Modificación
-- Distribución
-- Uso privado
-
-❌ **Prohibido**:
-- Responsabilidad de garantía
-- Responsabilidad de daños
-
-📝 **Requerido**:
-- Incluir licencia y copyright
-- Indicar cambios realizados
+- Respect and consideration for everyone
+- Open and constructive communication
+- Focus on what's best for the community
+- Empathy and collaboration
 
 ---
 
-## 👨‍💻 Autor
+## 📄 License
 
-**[Tu Nombre]**
-- 🌐 [LinkedIn](https://linkedin.com/in/tu-perfil)
-- 💻 [GitHub](https://github.com/tu-usuario)
-- 📧 [Email](mailto:tu-email@ejemplo.com)
-- 🐦 [Twitter](https://twitter.com/tu-usuario)
+This project is under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-### Sobre el Autor
+### License Summary
 
-Desarrollador de software especializado en automatización e inteligencia artificial. Apasionado por crear soluciones que transforman datos en decisiones estratégicas.
+✅ **Permitted**:
+- Commercial use
+- Modification
+- Distribution
+- Private use
 
----
+❌ **Prohibited**:
+- Warranty liability
+- Damage liability
 
-## 🙏 Agradecimientos
-
-Este proyecto no sería posible sin el apoyo de:
-
-### Tecnologías y Plataformas
-- **n8n** - Por la increíble plataforma de automatización
-- **Groq** - Por la API de IA de alta velocidad
-- **Supabase** - Por la infraestructura de base de datos
-- **Resend** - Por el servicio de email transaccional
-- **Slack** - Por la plataforma de comunicación
-
-### Comunidad
-- La comunidad de open source
-- Contribuidores de n8n
-- Desarrolladores de Groq
-- Equipo de Supabase
-
-### Inspiración
-- Todos los que creen en el poder de la automatización
-- Empresas que innovan con IA
-- Comunidades que comparten conocimiento
+📝 **Required**:
+- Include license and copyright
+- State changes made
 
 ---
 
-## 📞 Soporte y Contacto
+## 👨‍💻 Author
 
-### ¿Necesitas Ayuda?
+**Marcos del Valle**
+- 🌐 [LinkedIn](https://www.linkedin.com/in/marcos-del-valle-8a3760266/)
+- 💻 [GitHub](https://github.com/Marcosdelvallee)
+- 📧 [Email](mailto:marcosdv99@gmail.com)
 
-📖 **Documentación**
-- [Guía de Configuración](docs/setup-guide.md)
-- [Arquitectura del Sistema](docs/architecture.md)
-- [Issues en GitHub](https://github.com/tu-usuario/MarketIntelligenceAI-Project/issues)
+### About the Author
 
-💬 **Comunidad**
-- [Discussions en GitHub](https://github.com/tu-usuario/MarketIntelligenceAI-Project/discussions)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/market-intelligence-ai)
-
-📧 **Contacto Directo**
-- Email: [tu-email@ejemplo.com](mailto:tu-email@ejemplo.com)
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
-
-### Soporte Empresarial
-
-¿Necesitas soporte empresarial o implementación personalizada?
-
-🏢 **Servicios Profesionales**
-- Implementación y configuración
-- Personalización y desarrollo
-- Training y consultoría
-- Soporte 24/7
-
-📞 **Contactar**
-- Email: enterprise@tuempresa.com
-- Teléfono: +1 (555) 123-4567
+Software developer specialized in automation and artificial intelligence. Passionate about creating solutions that transform data into strategic decisions.
 
 ---
 
-## 🌟 Star History
+## 📞 Support and Contact
 
-Si este proyecto te ha sido útil, considera darle una ⭐ en GitHub:
+### Need Help?
 
-[![Star History Chart](https://api.star-history.com/svg?repos=tu-usuario/MarketIntelligenceAI-Project&type=Date)](https://star-history.com/#tu-usuario/MarketIntelligenceAI-Project&Date)
+📖 **Documentation**
+- [Setup Guide](docs/setup-guide.md)
+- [System Architecture](docs/architecture.md)
+- [GitHub Issues](https://github.com/Marcosdelvallee/MarketIntelligenceAI-Project/issues)
+
+📧 **Direct Contact**
+- Email: marcosdv99@gmail.com
+- LinkedIn: https://www.linkedin.com/in/marcos-del-valle-8a3760266/
+
+### Enterprise Support
+
+📞 **Contact**
+- Email: marcosdv99@gmail.com
+- Phone: +54 341 212-6628
 
 ---
 
-## 📊 Estadísticas del Proyecto
+## 📊 Project Statistics
 
 <div align="center">
 
-![GitHub Stars](https://img.shields.io/github/stars/tu-usuario/MarketIntelligenceAI-Project?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/tu-usuario/MarketIntelligenceAI-Project?style=social)
-![GitHub Issues](https://img.shields.io/github/issues/tu-usuario/MarketIntelligenceAI-Project)
-![GitHub License](https://img.shields.io/github/license/tu-usuario/MarketIntelligenceAI-Project)
-![GitHub last-commit](https://img.shields.io/github/last-commit/tu-usuario/MarketIntelligenceAI-Project)
+![GitHub Stars](https://img.shields.io/github/stars/Marcosdelvallee/MarketIntelligenceAI-Project?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/Marcosdelvallee/MarketIntelligenceAI-Project?style=social)
+![GitHub Issues](https://img.shields.io/github/issues/Marcosdelvallee/MarketIntelligenceAI-Project)
+![GitHub License](https://img.shields.io/github/license/Marcosdelvallee/MarketIntelligenceAI-Project)
+![GitHub last-commit](https://img.shields.io/github/last-commit/Marcosdelvallee/MarketIntelligenceAI-Project)
 
 </div>
 
 ---
 
-## 🔗 Enlaces Útiles
+## 🔗 Useful Links
 
-- [Documentación de n8n](https://docs.n8n.io)
-- [Documentación de Supabase](https://supabase.com/docs)
-- [Documentación de Groq](https://groq.com/docs)
-- [Documentación de Resend](https://resend.com/docs)
-- [Documentación de Slack API](https://api.slack.com)
+- [n8n Documentation](https://docs.n8n.io)
+- [Supabase Documentation](https://supabase.com/docs)
+- [Groq Documentation](https://groq.com/docs)
+- [Resend Documentation](https://resend.com/docs)
+- [Slack API Documentation](https://api.slack.com)
 
 ---
 
-## 🎯 Conclusión
+## 🎯 Conclusion
 
-El **Market Intelligence AI System** representa el futuro de la inteligencia competitiva. Al combinar automatización, inteligencia artificial y análisis de datos en tiempo real, proporciona a las empresas una ventaja competitiva significativa.
+The **Market Intelligence AI System** represents the future of competitive intelligence. By combining automation, artificial intelligence, and real-time data analysis, it provides companies with a significant competitive advantage.
 
-### ¿Por qué Elegir Este Sistema?
+### Why Choose This System?
 
-✅ **Automatización Total**: Sin intervención manual
-✅ **Análisis Inteligente**: IA de última generación  
-✅ **Costo Efectivo**: 95% más económico que soluciones tradicionales
-✅ **Escalable**: Crece con tu negocio
-✅ **Open Source**: Sin vendor lock-in
-✅ **Fácil de Usar**: Interfaz intuitiva
-✅ **Soporte Activo**: Comunidad vibrante
+✅ **Total Automation**: No manual intervention
+✅ **Intelligent Analysis**: State-of-the-art AI  
+✅ **Cost-Effective**: 95% cheaper than traditional solutions
+✅ **Scalable**: Grows with your business
+✅ **Open Source**: No vendor lock-in
+✅ **Easy to Use**: Intuitive interface
+✅ **Active Support**: Vibrant community
 
-### Comienza Hoy
+### Start Today
 
-🚀 **Transforma tu inteligencia competitiva con el poder de la IA**
+🚀 **Transform your competitive intelligence with the power of AI**
 
-[Empezar Ahora](https://github.com/tu-usuario/MarketIntelligenceAI-Project) • [Ver Demo](https://github.com/tu-usuario/MarketIntelligenceAI-Project) • [Contactar](mailto:tu-email@ejemplo.com)
+[Get Started Now](https://github.com/Marcosdelvallee/MarketIntelligenceAI-Project) • [View Demo](https://github.com/Marcosdelvallee/MarketIntelligenceAI-Project) • [Contact](mailto:marcosdv99@gmail.com)
 
 ---
 
 <div align="center">
 
-**⚡ Potenciado por IA - Automatización Inteligente para Decisiones Estratégicas**
+**⚡ Powered by AI - Intelligent Automation for Strategic Decisions**
 
-*Hecho con ❤️ por [Tu Nombre]*
+*Made with ❤️ by Marcos del Valle*
 
 </div>
