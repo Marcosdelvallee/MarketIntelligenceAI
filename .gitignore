@@ -1,0 +1,204 @@
+# ============================================
+# MARKET INTELLIGENCE AI SYSTEM
+# Git Ignore Configuration
+# ============================================
+
+# ============================================
+# ENVIRONMENT VARIABLES
+# ============================================
+# Never commit environment variables
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ============================================
+# LOGS
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ============================================
+# DEPENDENCIES
+# ============================================
+node_modules/
+jspm_packages/
+
+# ============================================
+# TESTING
+# ============================================
+coverage/
+.nyc_output/
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
+temp/
+tmp/
+*.tmp
+*.temp
+.cache/
+
+# ============================================
+# BACKUPS
+# ============================================
+backups/
+*.backup
+*.bak
+*.old
+
+# ============================================
+# SYSTEM FILES
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+
+# ============================================
+# IDE CONFIGURATIONS
+# ============================================
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*.swn
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================
+# N8N SPECIFIC
+# ============================================
+.n8n/
+.n8n_config/
+workflow_data/
+
+# ============================================
+# BUILD OUTPUTS
+# ============================================
+dist/
+build/
+out/
+
+# ============================================
+# PACKAGE FILES
+# ============================================
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ============================================
+# SECURITY
+# ============================================
+# Private keys and certificates
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# API keys and secrets
+*secret*
+*private*
+credentials.json
+service-account.json
+
+# ============================================
+# DATABASE
+# ============================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================
+# DOCUMENTATION TEMP
+# ============================================
+docs/temp/
+docs/draft/
+
+# ============================================
+# SCREENSHOTS (OPTIONAL)
+# ============================================
+# Uncomment if you don't want to track screenshots
+# screenshots/
+
+# ============================================
+# MISC
+# ============================================
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# ============================================
+# CUSTOM
+# ============================================
+# Add any custom ignore rules here
+
+# ============================================
+# END OF GITIGNORE
+# ============================================

@@ -1,0 +1,672 @@
+{
+  "name": "Market Intelligence - Complete Workflow PROJECT",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://fakestoreapi.com/products",
+        "options": {}
+      },
+      "id": "948bc63d-530a-4dd5-8681-decb2fef29cc",
+      "name": "HTTP Request - Competitor 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        3248,
+        1312
+      ],
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "url": "https://dummyjson.com/products",
+        "options": {}
+      },
+      "id": "adede35b-1369-4662-9e7a-a0fbf93628e6",
+      "name": "HTTP Request - Competitor 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        3248,
+        1536
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Procesar datos de ambos competidores\nconst results = [];\nconst scrapedAt = new Date().toISOString();\n\n// Procesar cada item recibido de ambos competidores\nfor (const item of $input.all()) {\n  const data = item.json;\n  \n  // Determinar el competidor basado en el origen\n  let competitorId = 'unknown';\n  \n  // Verificar si viene de fakestoreapi\n  if (item.json.url && item.json.url.includes('fakestoreapi.com')) {\n    competitorId = 'fakestore';\n  } \n  // Verificar si viene de dummyjson\n  else if (item.json.url && item.json.url.includes('dummyjson.com')) {\n    competitorId = 'dummyjson';\n  }\n  // Verificar en los datos del producto\n  else if (data.url && data.url.includes('fakestoreapi.com')) {\n    competitorId = 'fakestore';\n  }\n  else if (data.url && data.url.includes('dummyjson.com')) {\n    competitorId = 'dummyjson';\n  }\n  else if (data.image && data.image.includes('fakestoreapi.com')) {\n    competitorId = 'fakestore';\n  }\n  else if (data.thumbnail && data.thumbnail.includes('dummyjson.com')) {\n    competitorId = 'dummyjson';\n  }\n  else {\n    competitorId = data.competitor_id || 'unknown';\n  }\n  \n  // Procesar productos según el formato de la API\n  if (Array.isArray(data)) {\n    for (const product of data) {\n      results.push({\n        json: {\n          name: product.name || product.title || 'Unknown Product',\n          price: product.price || 0,\n          category: product.category || 'general',\n          competitor_id: competitorId,\n          url: product.url || product.image || '',\n          scraped_at: scrapedAt\n        }\n      });\n    }\n  } else if (data.products && Array.isArray(data.products)) {\n    for (const product of data.products) {\n      results.push({\n        json: {\n          name: product.name || product.title || 'Unknown Product',\n          price: product.price || 0,\n          category: product.category || 'general',\n          competitor_id: competitorId,\n          url: product.url || product.image || '',\n          scraped_at: scrapedAt\n        }\n      });\n    }\n  } else {\n    results.push({\n      json: {\n        name: data.name || data.title || 'Unknown Product',\n        price: data.price || 0,\n        category: data.category || 'general',\n        competitor_id: competitorId,\n        url: data.url || data.image || '',\n        scraped_at: scrapedAt\n      }\n    });\n  }\n}\n\n// Devolver todos los productos juntos\nreturn results;"
+      },
+      "id": "a0ed089d-9ccd-4d91-bc4d-8634e44d7f0c",
+      "name": "Data Processing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3648,
+        1408
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "SUPABASE_URL",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "SUPABASE_APIKEY"
+            },
+            {
+              "name": "Authorization",
+              "value": "SUPABASE_AUTHORIZATION"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{$json.name}}"
+            },
+            {
+              "name": "price",
+              "value": "={{$json.price}}"
+            },
+            {
+              "name": "category",
+              "value": "={{$json.category}}"
+            },
+            {
+              "name": "competitor_id",
+              "value": "={{$json.competitor_id}}"
+            },
+            {
+              "name": "product_url",
+              "value": "={{$json.url}}"
+            },
+            {
+              "name": "scraped_at",
+              "value": "={{$json.scraped_at}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "65c7daab-8760-4dcf-953e-9bde0e10c016",
+      "name": "Save to Supabase",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        3824,
+        1408
+      ]
+    },
+    {
+      "parameters": {
+        "url": "SUPABASE_URL",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "SUPABASE_APIKEY"
+            },
+            {
+              "name": "Authorization",
+              "value": "SUPABASE_AUTHORIZATION"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f8b32f44-d0aa-4a07-83ef-27d825281ba0",
+      "name": "Get Latest Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4032,
+        1408
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener datos de productos del nodo anterior\nconst products = $input.all();\n\nif (products.length === 0) {\n  return [{ json: { message: \"No products found for analysis\" } }];\n}\n\n// Análisis de precios\nlet priceAnalysis = {\n  total_products: products.length,\n  avg_price: 0,\n  min_price: Infinity,\n  max_price: -Infinity,\n  by_competitor: {},\n  by_category: {}\n};\n\nlet totalPrice = 0;\n\nfor (const item of products) {\n  const product = item.json;\n  const price = parseFloat(product.price) || 0;\n  \n  totalPrice += price;\n  \n  if (price < priceAnalysis.min_price) priceAnalysis.min_price = price;\n  if (price > priceAnalysis.max_price) priceAnalysis.max_price = price;\n  \n  // Por competidor\n  const competitor = product.competitor_id || 'unknown';\n  if (!priceAnalysis.by_competitor[competitor]) {\n    priceAnalysis.by_competitor[competitor] = { count: 0, avg_price: 0, total_price: 0 };\n  }\n  priceAnalysis.by_competitor[competitor].count++;\n  priceAnalysis.by_competitor[competitor].total_price += price;\n  \n  // Por categoría\n  const category = product.category || 'general';\n  if (!priceAnalysis.by_category[category]) {\n    priceAnalysis.by_category[category] = { count: 0, avg_price: 0, total_price: 0 };\n  }\n  priceAnalysis.by_category[category].count++;\n  priceAnalysis.by_category[category].total_price += price;\n}\n\npriceAnalysis.avg_price = totalPrice / products.length;\n\n// Calcular promedios por competidor y categoría\nfor (const competitor in priceAnalysis.by_competitor) {\n  priceAnalysis.by_competitor[competitor].avg_price = \n    priceAnalysis.by_competitor[competitor].total_price / priceAnalysis.by_competitor[competitor].count;\n}\n\nfor (const category in priceAnalysis.by_category) {\n  priceAnalysis.by_category[category].avg_price = \n    priceAnalysis.by_category[category].total_price / priceAnalysis.by_category[category].count;\n}\n\nreturn [{ json: priceAnalysis }];"
+      },
+      "id": "a77de135-0048-4c33-87fa-2ae4dfdcb216",
+      "name": "Price Comparison",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4256,
+        1408
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener la respuesta de Groq Analysis\nconst groqResponse = $input.first().json;\n\nlet processedData = {\n  analysis_date: new Date().toISOString(),\n  summary: \"Analysis completed\",\n  trends: [],\n  opportunities: [],\n  threats: [],\n  recommendations: []\n};\n\n// Procesar la respuesta de Groq\nif (groqResponse && groqResponse.choices && groqResponse.choices.length > 0) {\n  try {\n    const content = groqResponse.choices[0].message.content;\n    \n    // Intentar extraer JSON del contenido\n    const jsonMatch = content.match(/\\{[\\s\\S]*\\}/);\n    if (jsonMatch) {\n      const parsedData = JSON.parse(jsonMatch[0]);\n      \n      processedData.summary = parsedData.summary || \"Market intelligence analysis completed\";\n      \n      // Extraer descripciones de los objetos y convertirlas a strings\n      if (parsedData.trends && Array.isArray(parsedData.trends)) {\n        processedData.trends = parsedData.trends.map(t => \n          typeof t === 'string' ? t : (t.descripcion || t.description || JSON.stringify(t))\n        );\n      }\n      \n      if (parsedData.opportunities && Array.isArray(parsedData.opportunities)) {\n        processedData.opportunities = parsedData.opportunities.map(o => \n          typeof o === 'string' ? o : (o.descripcion || o.description || JSON.stringify(o))\n        );\n      }\n      \n      if (parsedData.threats && Array.isArray(parsedData.threats)) {\n        processedData.threats = parsedData.threats.map(th => \n          typeof th === 'string' ? th : (th.descripcion || th.description || JSON.stringify(th))\n        );\n      }\n      \n      if (parsedData.recommendations && Array.isArray(parsedData.recommendations)) {\n        processedData.recommendations = parsedData.recommendations.map(r => \n          typeof r === 'string' ? r : (r.descripcion || r.description || JSON.stringify(r))\n        );\n      }\n    } else {\n      processedData.summary = content.substring(0, 500) + (content.length > 500 ? \"...\" : \"\");\n    }\n  } catch (e) {\n    console.log(\"Error parsing Groq response:\", e);\n    processedData.summary = \"Error processing analysis results\";\n  }\n}\n\nreturn [{ json: processedData }];"
+      },
+      "id": "3b26bd44-9c12-4d3a-a63e-4b8ba5e52f57",
+      "name": "Insight Processing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4048,
+        1632
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener datos del análisis anterior\nconst analysisData = $input.first().json;\n\nlet priority = 'medium';\nlet message = 'Market Intelligence analysis completed';\n\n// Función para extraer texto de objetos\nconst extractText = (item) => {\n  if (typeof item === 'string') return item;\n  if (item.descripcion) return item.descripcion;\n  if (item.description) return item.description;\n  if (item.nombre) return item.nombre;\n  if (item.name) return item.name;\n  if (item.accion) return item.accion;\n  if (item.action) return item.action;\n  return JSON.stringify(item);\n};\n\n// Procesar datos si existen\nif (analysisData) {\n  if (analysisData.trends) {\n    priority = 'high';\n    \n    const summaryText = typeof analysisData.summary === 'string' \n      ? analysisData.summary \n      : (analysisData.summary?.descripcion || analysisData.summary?.description || 'Análisis completado');\n    \n    message = `\n<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Análisis de Inteligencia de Mercado</title>\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap\" rel=\"stylesheet\">\n    <style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        body {\n            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);\n            padding: 20px;\n            line-height: 1.7;\n            min-height: 100vh;\n        }\n        .container {\n            max-width: 950px;\n            margin: 0 auto;\n            background: white;\n            border-radius: 24px;\n            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);\n            overflow: hidden;\n            position: relative;\n        }\n        .container::before {\n            content: '';\n            position: absolute;\n            top: -2px;\n            left: -2px;\n            right: -2px;\n            bottom: -2px;\n            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c, #667eea);\n            background-size: 400% 400%;\n            z-index: -1;\n            border-radius: 26px;\n            animation: gradientBorder 15s ease infinite;\n        }\n        @keyframes gradientBorder {\n            0% { background-position: 0% 50%; }\n            50% { background-position: 100% 50%; }\n            100% { background-position: 0% 50%; }\n        }\n        .header {\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n            padding: 50px 40px;\n            text-align: center;\n            position: relative;\n            overflow: hidden;\n        }\n        .header::before {\n            content: '';\n            position: absolute;\n            top: -50%;\n            left: -50%;\n            width: 200%;\n            height: 200%;\n            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);\n            animation: pulse 20s infinite;\n        }\n        @keyframes pulse {\n            0%, 100% { transform: scale(1) rotate(0deg); }\n            50% { transform: scale(1.1) rotate(180deg); }\n        }\n        .header-content {\n            position: relative;\n            z-index: 1;\n        }\n        .header h1 {\n            font-size: 36px;\n            font-weight: 800;\n            margin-bottom: 12px;\n            text-shadow: 0 4px 8px rgba(0,0,0,0.3);\n            letter-spacing: -0.5px;\n        }\n        .header p {\n            font-size: 17px;\n            opacity: 0.95;\n            margin-bottom: 20px;\n            font-weight: 300;\n        }\n        .priority-badge {\n            display: inline-block;\n            padding: 10px 24px;\n            border-radius: 30px;\n            font-size: 13px;\n            font-weight: 700;\n            text-transform: uppercase;\n            letter-spacing: 2px;\n            background: rgba(255,255,255,0.2);\n            backdrop-filter: blur(20px);\n            border: 2px solid rgba(255,255,255,0.4);\n            box-shadow: 0 8px 32px rgba(0,0,0,0.2);\n            animation: badgePulse 3s ease-in-out infinite;\n        }\n        @keyframes badgePulse {\n            0%, 100% { transform: scale(1); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }\n            50% { transform: scale(1.05); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }\n        }\n        .content {\n            padding: 45px;\n        }\n        .summary-box {\n            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);\n            color: white;\n            padding: 35px;\n            border-radius: 20px;\n            margin-bottom: 40px;\n            box-shadow: 0 15px 40px rgba(240, 147, 251, 0.4);\n            position: relative;\n            overflow: hidden;\n        }\n        .summary-box::before {\n            content: '';\n            position: absolute;\n            top: -50%;\n            right: -50%;\n            width: 100%;\n            height: 100%;\n            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);\n            animation: shimmer 10s infinite;\n        }\n        @keyframes shimmer {\n            0% { transform: translateX(-100%) rotate(45deg); }\n            100% { transform: translateX(100%) rotate(45deg); }\n        }\n        .summary-box h3 {\n            font-size: 24px;\n            margin-bottom: 18px;\n            font-weight: 700;\n            position: relative;\n            z-index: 1;\n        }\n        .summary-box p {\n            font-size: 17px;\n            line-height: 1.9;\n            position: relative;\n            z-index: 1;\n        }\n        .section {\n            margin-bottom: 40px;\n            padding: 30px;\n            border-radius: 20px;\n            position: relative;\n            overflow: hidden;\n            box-shadow: 0 10px 30px rgba(0,0,0,0.1);\n        }\n        .section::before {\n            content: '';\n            position: absolute;\n            top: 0;\n            left: 0;\n            right: 0;\n            height: 5px;\n        }\n        .section h2 {\n            font-size: 26px;\n            margin-bottom: 25px;\n            font-weight: 700;\n            display: flex;\n            align-items: center;\n            gap: 15px;\n        }\n        .section.trends {\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n        }\n        .section.trends::before { background: linear-gradient(90deg, #3498db, #2980b9); }\n        .section.trends .item {\n            background: rgba(255,255,255,0.12);\n            border-left-color: rgba(255,255,255,0.6);\n            color: white;\n            backdrop-filter: blur(10px);\n        }\n        .section.trends .item strong { color: white; }\n        \n        .section.opportunities {\n            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);\n            color: white;\n        }\n        .section.opportunities::before { background: linear-gradient(90deg, #2ecc71, #27ae60); }\n        .section.opportunities .item {\n            background: rgba(255,255,255,0.12);\n            border-left-color: rgba(255,255,255,0.6);\n            color: white;\n            backdrop-filter: blur(10px);\n        }\n        .section.opportunities .item strong { color: white; }\n        \n        .section.threats {\n            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);\n            color: white;\n        }\n        .section.threats::before { background: linear-gradient(90deg, #e74c3c, #c0392b); }\n        .section.threats .item {\n            background: rgba(255,255,255,0.12);\n            border-left-color: rgba(255,255,255,0.6);\n            color: white;\n            backdrop-filter: blur(10px);\n        }\n        .section.threats .item strong { color: white; }\n        \n        .section.recommendations {\n            background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);\n            color: white;\n        }\n        .section.recommendations::before { background: linear-gradient(90deg, #9b59b6, #8e44ad); }\n        .section.recommendations .item {\n            background: rgba(255,255,255,0.12);\n            border-left-color: rgba(255,255,255,0.6);\n            color: white;\n            backdrop-filter: blur(10px);\n        }\n        .section.recommendations .item strong { color: white; }\n        \n        .item {\n            padding: 20px 25px;\n            margin: 18px 0;\n            background: white;\n            border-radius: 12px;\n            border-left: 5px solid #ddd;\n            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n            box-shadow: 0 5px 20px rgba(0,0,0,0.1);\n            position: relative;\n            overflow: hidden;\n        }\n        .item::before {\n            content: '';\n            position: absolute;\n            top: 0;\n            left: -100%;\n            width: 100%;\n            height: 100%;\n            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);\n            transition: left 0.5s;\n        }\n        .item:hover::before {\n            left: 100%;\n        }\n        .item:hover {\n            transform: translateX(10px) scale(1.02);\n            box-shadow: 0 15px 40px rgba(0,0,0,0.2);\n        }\n        .item strong {\n            font-weight: 700;\n            font-size: 19px;\n        }\n        .footer {\n            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);\n            color: white;\n            padding: 40px;\n            text-align: center;\n            position: relative;\n            overflow: hidden;\n        }\n        .footer::before {\n            content: '';\n            position: absolute;\n            top: -50%;\n            left: -50%;\n            width: 200%;\n            height: 200%;\n            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);\n            animation: footerPulse 25s infinite;\n        }\n        @keyframes footerPulse {\n            0%, 100% { transform: scale(1); }\n            50% { transform: scale(1.2); }\n        }\n        .footer-content {\n            position: relative;\n            z-index: 1;\n        }\n        .footer p {\n            margin: 10px 0;\n            font-size: 16px;\n            font-weight: 300;\n        }\n        .footer .small {\n            font-size: 13px;\n            color: #95a5a6;\n            margin-top: 25px;\n            padding-top: 25px;\n            border-top: 1px solid rgba(255,255,255,0.1);\n        }\n        .divider {\n            height: 4px;\n            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);\n            background-size: 300% 300%;\n            margin: 35px 0;\n            border-radius: 3px;\n            animation: gradientMove 8s ease infinite;\n        }\n        @keyframes gradientMove {\n            0% { background-position: 0% 50%; }\n            50% { background-position: 100% 50%; }\n            100% { background-position: 0% 50%; }\n        }\n        .icon {\n            font-size: 32px;\n            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));\n        }\n        @media (max-width: 600px) {\n            .container {\n                margin: 0;\n                border-radius: 0;\n            }\n            .header, .content, .footer {\n                padding: 30px 25px;\n            }\n            .header h1 {\n                font-size: 28px;\n            }\n            .section h2 {\n                font-size: 22px;\n            }\n            .item {\n                padding: 18px 20px;\n            }\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"header\">\n            <div class=\"header-content\">\n                <h1>📊 ANÁLISIS DE INTELIGENCIA DE MERCADO</h1>\n                <p>🤖 MARKET INTELLIGENCE AI SYSTEM - ANÁLISIS AUTOMATIZADO</p>\n                <div class=\"priority-badge\">⚡ PRIORIDAD: ${priority.toUpperCase()}</div>\n            </div>\n        </div>\n        \n        <div class=\"content\">\n            <div class=\"summary-box\">\n                <h3>📋 RESUMEN EJECUTIVO</h3>\n                <p>${summaryText}</p>\n            </div>\n            \n            <div class=\"divider\"></div>\n            \n            <div class=\"section trends\">\n                <h2><span class=\"icon\">📈</span> TENDENCIAS DEL MERCADO</h2>\n`;\n\n    if (Array.isArray(analysisData.trends) && analysisData.trends.length > 0) {\n      analysisData.trends.forEach((trend, index) => {\n        const trendText = extractText(trend);\n        message += `\n                <div class=\"item\">\n                    <strong>${index + 1}.</strong> ${trendText}\n                </div>`;\n      });\n    }\n    \n    message += `\n            </div>\n            \n            <div class=\"section opportunities\">\n                <h2><span class=\"icon\">💡</span> OPORTUNIDADES IDENTIFICADAS</h2>\n`;\n    \n    if (analysisData.opportunities && Array.isArray(analysisData.opportunities) && analysisData.opportunities.length > 0) {\n      analysisData.opportunities.forEach((opp, index) => {\n        const oppText = extractText(opp);\n        message += `\n                <div class=\"item\">\n                    <strong>${index + 1}.</strong> ${oppText}\n                </div>`;\n      });\n    }\n    \n    message += `\n            </div>\n            \n            <div class=\"section threats\">\n                <h2><span class=\"icon\">⚠️</span> AMENAZAS DETECTADAS</h2>\n`;\n    \n    if (analysisData.threats && Array.isArray(analysisData.threats) && analysisData.threats.length > 0) {\n      analysisData.threats.forEach((threat, index) => {\n        const threatText = extractText(threat);\n        message += `\n                <div class=\"item\">\n                    <strong>${index + 1}.</strong> ${threatText}\n                </div>`;\n      });\n    }\n    \n    message += `\n            </div>\n            \n            <div class=\"section recommendations\">\n                <h2><span class=\"icon\">🎯</span> RECOMENDACIONES ESTRATÉGICAS</h2>\n`;\n    \n    if (analysisData.recommendations && Array.isArray(analysisData.recommendations) && analysisData.recommendations.length > 0) {\n      analysisData.recommendations.forEach((rec, index) => {\n        const recText = extractText(rec);\n        message += `\n                <div class=\"item\">\n                    <strong>${index + 1}.</strong> ${recText}\n                </div>`;\n      });\n    }\n    \n    message += `\n            </div>\n        </div>\n        \n        <div class=\"footer\">\n            <div class=\"footer-content\">\n                <p>📅 Fecha del análisis: ${new Date().toLocaleDateString('es-ES', { \n                  weekday: 'long', \n                  year: 'numeric', \n                  month: 'long', \n                  day: 'numeric' \n                })}</p>\n                <p>🤖 Generado por Market Intelligence AI System</p>\n                <p class=\"small\">Este análisis se genera automáticamente basado en datos de competidores en tiempo real</p>\n            </div>\n        </div>\n    </div>\n</body>\n</html>`;\n  }\n}\n\nreturn [{\n  json: {\n    priority: priority,\n    message: message,\n    analysis_date: new Date().toISOString()\n  }\n}]"
+      },
+      "id": "38f2f6a2-a0f9-412f-8fd2-e31cff4aaa5e",
+      "name": "Alert Logic",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4256,
+        1632
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "RESEND_URL",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "RESEND_AUTHORIZATION"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "from",
+              "value": "onboarding@resend.dev"
+            },
+            {
+              "name": "to",
+              "value": "YOUR-EMAIL"
+            },
+            {
+              "name": "subject",
+              "value": "=Alert: Market Intelligence - {{$json.priority}}"
+            },
+            {
+              "name": "html",
+              "value": "={{$json.message}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "336942ba-c7a7-4422-abf6-906477ac8dc2",
+      "name": "Send Email Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4528,
+        1504
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const reportDate = new Date().toISOString().split(\"T\")[0];\n\nreturn [{\n  json: {\n    summary: \"Market Intelligence Report - \" + reportDate,\n    trends: \"Analysis of current market trends\",\n    opportunities: \"Identified market opportunities\",\n    threats: \"Potential market threats detected\",\n    recommendations: \"Strategic recommendations based on analysis\",\n    price_changes: \"Price movement analysis\",\n    alerts: \"Critical alerts summary\",\n    report_date: reportDate\n  }\n}];"
+      },
+      "id": "bbe2af8d-1ea7-429c-812e-415e735f2580",
+      "name": "Report Generation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3824,
+        1872
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { status: \"success\", message: \"Workflow completed\" } }];"
+      },
+      "id": "3c1169c3-d7a7-4293-8e40-71d27c90b73c",
+      "name": "Cleanup",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4480,
+        1872
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "GROQ_URL",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "GROQ_AUTHORIZATION"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"llama-3.3-70b-versatile\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Analiza estos datos de inteligencia competitiva: {{$json}}. Genera insights sobre tendencias, oportunidades y amenazas en formato JSON. IMPORTANTE: Usa exactamente estos nombres de claves en inglés: trends, opportunities, threats, recommendations, summary.\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "id": "974c62db-b2a2-4e6e-aa8c-79e8308cbf66",
+      "name": "GroqAnalysis",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        3824,
+        1632
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        2992,
+        1456
+      ],
+      "id": "62cca13a-ebe0-44a3-b865-01479c537a26",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "SUPABASE_URL",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "SUPABASE_APIKEY"
+            },
+            {
+              "name": "Authorization",
+              "value": "SUPABASE_AUTHORIZATION"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "priority",
+              "value": "={{$node[\"Edit fields\"].json.priority}}"
+            },
+            {
+              "name": "message",
+              "value": "={{$node[\"Edit fields\"].json.message}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "02a2d310-6687-4810-ad48-1367fba259fb",
+      "name": "Save alert to Supabase",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        3552,
+        1872
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "SUPABASE_URL",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "SUPABASE_APIKEY"
+            },
+            {
+              "name": "Authorization",
+              "value": "SUPABASE_AUTHORIZATION"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "summary",
+              "value": "=={{$node[\"Report Generation\"].json.summary}}"
+            },
+            {
+              "name": "trends",
+              "value": "=={{$node[\"Report Generation\"].json.trends}}"
+            },
+            {
+              "name": "opportunities",
+              "value": "=={{$node[\"Report Generation\"].json.opportunities}}"
+            },
+            {
+              "name": "threats",
+              "value": "=={{$node[\"Report Generation\"].json.threats}}"
+            },
+            {
+              "name": "recommendations",
+              "value": "=={{$node[\"Report Generation\"].json.recommendations}}"
+            },
+            {
+              "name": "price_changes",
+              "value": "=={{$node[\"Report Generation\"].json.price_changes}}"
+            },
+            {
+              "name": "alerts",
+              "value": "=={{$node[\"Report Generation\"].json.alerts}}"
+            },
+            {
+              "name": "report_date",
+              "value": "=={{$node[\"Report Generation\"].json.report_date}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "356608a2-b1ce-4fa1-b9a8-60e05f0539b7",
+      "name": "Save Report to Supabase1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4048,
+        1872
+      ]
+    },
+    {
+      "parameters": {
+        "url": "SUPABASE_TABLE_URL",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "SUPABASE_APIKEY"
+            },
+            {
+              "name": "Authorization",
+              "value": "SUPABASE_AUTHORIZATION"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": []
+        },
+        "options": {}
+      },
+      "id": "1f909843-fc71-4f22-8c55-792cecc0c01a",
+      "name": "Get Dashboard Data1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4272,
+        1872
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        3472,
+        1408
+      ],
+      "id": "ea7102e6-e67c-4911-8e12-ac319548cd93",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener datos de Alert Logic\nconst alertData = $input.first().json;\n\n// Crear objeto con los valores directos\nconst preparedData = {\n  priority: alertData.priority,\n  message: alertData.message\n};\n\nreturn [{\n  json: preparedData\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4528,
+        1664
+      ],
+      "id": "180a5be2-40ac-4e0c-b381-18a7a037de1c",
+      "name": "Edit fields"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "HTTP Request - Competitor 1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request - Competitor 2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Data Processing": {
+      "main": [
+        [
+          {
+            "node": "Save to Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Latest Data": {
+      "main": [
+        [
+          {
+            "node": "Price Comparison",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Price Comparison": {
+      "main": [
+        [
+          {
+            "node": "GroqAnalysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insight Processing": {
+      "main": [
+        [
+          {
+            "node": "Alert Logic",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Alert Logic": {
+      "main": [
+        [
+          {
+            "node": "Send Email Alert",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email Alert": {
+      "main": [
+        []
+      ]
+    },
+    "Report Generation": {
+      "main": [
+        [
+          {
+            "node": "Save Report to Supabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Supabase": {
+      "main": [
+        [
+          {
+            "node": "Get Latest Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GroqAnalysis": {
+      "main": [
+        [
+          {
+            "node": "Insight Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request - Competitor 1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request - Competitor 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save alert to Supabase": {
+      "main": [
+        [
+          {
+            "node": "Report Generation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Report to Supabase1": {
+      "main": [
+        [
+          {
+            "node": "Get Dashboard Data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Dashboard Data1": {
+      "main": [
+        [
+          {
+            "node": "Cleanup",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Data Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit fields": {
+      "main": [
+        [
+          {
+            "node": "Save alert to Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "50d918f3-a31b-48aa-b49e-8cbd6d2255c6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e48ed9dc7d901d6c23ce5cef0ac9a5d760c80669e7c12a6071ea96a71c0556fb"
+  },
+  "id": "K6C01QoWTwoVEO4Q",
+  "tags": []
+}
